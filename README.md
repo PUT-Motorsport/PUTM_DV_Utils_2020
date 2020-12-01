@@ -24,9 +24,9 @@ sudo ip link add dev vcan0 type vcan
 sudo ip link set up vcan0
 ```
 
-### Make ROS workspace and get recruitment task repository
+### Make ROS workspace and get repository
 ```bash
-cd ~/dv_ws/src
+cd ~/dv_ws/
 git clone -b can https://github.com/PUT-Motorsport/PUTM_DV_utils_2020.git 
 ```
 
