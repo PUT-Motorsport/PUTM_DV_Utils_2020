@@ -26,8 +26,9 @@ sudo ip link set up vcan0
 
 ### Make ROS workspace and get repository
 ```bash
-cd ~/dv_ws/
-git clone -b can https://github.com/PUT-Motorsport/PUTM_DV_utils_2020.git 
+cd ~/dv_ws/src
+git clone -b can https://github.com/PUT-Motorsport/PUTM_DV_utils_2020.git
+mv ~/dv_ws/src/PUTM_DV_utils_2020/* ~/dv_ws/src/
 ```
 
 ### Build workspace
