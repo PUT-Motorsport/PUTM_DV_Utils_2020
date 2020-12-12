@@ -31,6 +31,12 @@ git clone -b can https://github.com/PUT-Motorsport/PUTM_DV_utils_2020.git
 mv ~/dv_ws/src/PUTM_DV_utils_2020/* ~/dv_ws/src/
 ```
 
+### Don't forget to give permissions to execute!
+for example
+``` bash 
+chmod +x CANreceiver.py
+```
+
 ### Build workspace
 ```bash
 cd ~/dv_ws
