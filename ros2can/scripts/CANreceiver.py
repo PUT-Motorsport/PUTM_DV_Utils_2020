@@ -12,13 +12,13 @@ def talker():
     can_interface = 'vcan0'
     bus = can.interface.Bus(can_interface, bustype='socketcan')
     pub = rospy.Publisher('ROSnode', String, queue_size=10) #sending messages to topic 'ROSnode'
-    rospy.init_node('talker', anonymous=True) 
+    rospy.init_node('can2flexbe', anonymous=True) 
     rate = rospy.Rate(1) # 1hz
     while not rospy.is_shutdown():
         message = bus.recv() #listening to CAN
-        hello_str = "CAN SAYS: " + str(message)
-        rospy.loginfo(hello_str)
-        pub.publish(hello_str)
+        str_message = str(message)
+        rospy.loginfo(str_message)
+        pub.publish(str_message)
         rate.sleep()
 
 if __name__ == '__main__':
