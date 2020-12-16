@@ -11,9 +11,9 @@ from std_msgs.msg import String
 def talker():
     can_interface = 'vcan0'
     bus = can.interface.Bus(can_interface, bustype='socketcan')
-    pub = rospy.Publisher('ROSnode', String, queue_size=10) #sending messages to topic 'ROSnode'
+    pub = rospy.Publisher('can2flexbe', String, queue_size=10) #sending messages to topic 'ROSnode'
     rospy.init_node('can2flexbe', anonymous=True) 
-    rate = rospy.Rate(1) # 1hz
+    rate = rospy.Rate(10) # 1hz
     while not rospy.is_shutdown():
         message = bus.recv() #listening to CAN
         str_message = str(message)

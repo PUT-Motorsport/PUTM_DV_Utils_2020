@@ -25,7 +25,7 @@ def CANsend(data):
 
         msg = can.Message(arbitration_id=0x10, extended_id=False, is_remote_frame=False, is_error_frame=False, data=data)
         bus.send(msg)
-        time.sleep(100)
+        time.sleep(0.1)
     pass
 
 def listener():
@@ -36,10 +36,21 @@ def listener():
 
     rospy.Subscriber('flexbe2can', String, callback) #receiving messages from topic 'flexbe2can'
 
+    #first sending 7 testing messages
+    CANsend([0xc0,0x7c])
+    CANsend([0x00,0x00])
+    CANsend([0xc0,0x7c])
+    CANsend([0xf2,0x5d])
+    CANsend([0x03,0x14])
+    CANsend([0x00,0x00])
+    CANsend([0x60,0x04])
+
     rospy.spin()
 
 
 
 if __name__ == '__main__':
     print("hi")
+
+
     listener()
