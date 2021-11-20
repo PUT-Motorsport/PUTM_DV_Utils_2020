@@ -1,0 +1,4 @@
+<launch>
+    <!-- Start python script that will listen to topic "/test" and print messages sent by ROS slaves -->
+    <node pkg="example_package" name="receiver" type="receiver.py" output="screen"/>
+</launch>
