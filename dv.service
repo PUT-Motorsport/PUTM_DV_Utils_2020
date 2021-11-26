@@ -1,0 +1,11 @@
+[Unit]
+After=syslog.target getty.target
+Description="PUT Motorsport Driverless Autonomous System Service"
+[Service]
+PermissionsStartOnly=true
+ExecStart=+/usr/bin/dv_startup.sh
+User=nuc
+Group=tty
+Type=simple
+[Install]
+WantedBy=multi-user.target
